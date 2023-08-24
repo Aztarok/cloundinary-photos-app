@@ -1,7 +1,7 @@
 "use client";
 
 import { ImageGrid } from "@/components/ImageGrid";
-import { CloudImage } from "./CloudImage";
+import { CloudImage } from "../../components/ui/CloudImage";
 import { SearchResult } from "./page";
 
 export default function GalleryGrid({ images }: { images: SearchResult[] }) {

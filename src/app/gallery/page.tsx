@@ -1,5 +1,5 @@
 import cloudinary from "cloudinary";
-import { CloudImage } from "./CloudImage";
+import { CloudImage } from "../../components/ui/CloudImage";
 import UploadButton from "./Upload-Button";
 import { ImageGrid } from "@/components/ImageGrid";
 import GalleryGrid from "./GalleryGrid";
