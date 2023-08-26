@@ -1,6 +1,4 @@
 import cloudinary from "cloudinary";
-import UploadButton from "../gallery/Upload-Button";
-import GalleryGrid from "../gallery/GalleryGrid";
 import { AlbumCard } from "./AlbumCard";
 
 export type Folder = {
