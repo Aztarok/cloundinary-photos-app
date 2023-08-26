@@ -3,8 +3,8 @@
 import { Heart } from "@/components/icons/Heart";
 import { CldImage, CldImageProps } from "next-cloudinary";
 import { useState, useTransition } from "react";
-import { setAsFavorite } from "../../app/gallery/Actions";
-import { SearchResult } from "../../app/gallery/page";
+import { setAsFavorite } from "../app/gallery/Actions";
+import { SearchResult } from "../app/gallery/page";
 import { FullHeart } from "@/components/icons/FullHeart";
 import { ImageMenu } from "./ImageMenu";
 
@@ -46,7 +46,7 @@ export function CloudImage(
                     className="absolute top-2 left-2 hover:cursor-pointer hover:text-red-500"
                 />
             )}
-            <ImageMenu />
+            <ImageMenu image={imageData} />
         </div>
     );
 }

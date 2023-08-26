@@ -1,5 +1,3 @@
-import { FolderPlus } from "lucide-react";
-
 import { Button } from "@/components/ui/Button";
 import {
     DropdownMenu,
@@ -7,9 +5,11 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger
 } from "@/components/ui/DropdownMenu";
-import { Menu } from "../icons/Menu";
+import { AddToAlbum } from "./AddToAlbum";
+import { Menu } from "./icons/Menu";
+import { SearchResult } from "@/app/gallery/page";
 
-export function ImageMenu() {
+export function ImageMenu({ image }: { image: SearchResult }) {
     return (
         <div className="absolute top-2 right-2">
             <DropdownMenu>
@@ -19,9 +19,8 @@ export function ImageMenu() {
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-40">
-                    <DropdownMenuItem>
-                        <FolderPlus />
-                        <span className="pl-4">Add to Album</span>
+                    <DropdownMenuItem asChild>
+                        <AddToAlbum image={image} />
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>

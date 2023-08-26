@@ -1,11 +1,10 @@
+import { Heart } from "@/components/icons/Heart";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
-import "./globals.css";
+import { Button } from "@/components/ui/Button";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
-import { Heart } from "@/components/icons/Heart";
 import Link from "next/link";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
