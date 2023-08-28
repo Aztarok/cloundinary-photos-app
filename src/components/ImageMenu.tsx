@@ -9,6 +9,8 @@ import { AddToAlbum } from "./AddToAlbum";
 import { Menu } from "./icons/Menu";
 import { SearchResult } from "@/app/gallery/page";
 import { useState } from "react";
+import Link from "next/link";
+import { Pencil } from "lucide-react";
 
 export function ImageMenu({ image }: { image: SearchResult }) {
     const [open, setOpen] = useState(false);
@@ -29,6 +31,16 @@ export function ImageMenu({ image }: { image: SearchResult }) {
                                 setOpen(false);
                             }}
                         />
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                        <Link
+                            href={`/edit?publicId=${encodeURI(
+                                image.public_id
+                            )}`}
+                        >
+                            <Pencil className="mr-2 w-4 h-4 ml-3" />
+                            Edit
+                        </Link>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
