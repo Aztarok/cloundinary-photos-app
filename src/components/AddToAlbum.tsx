@@ -50,7 +50,7 @@ export function AddToAlbum({
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="name" className="text-right">
+                        <Label htmlFor="album" className="text-right">
                             Album
                         </Label>
                         <Input

@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { Button } from "@/components/ui/Button";
 import {
     Card,
@@ -9,10 +7,8 @@ import {
     CardHeader,
     CardTitle
 } from "@/components/ui/Card";
-import { Input } from "@/components/ui/Input";
-import { Label } from "@/components/ui/Label";
-import { Folder } from "./page";
 import Link from "next/link";
+import { Folder } from "./page";
 
 export function AlbumCard({ folder }: { folder: Folder }) {
     return (

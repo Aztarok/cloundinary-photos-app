@@ -2,6 +2,8 @@
 
 import { CloudImage } from "@/components/CloudImage";
 import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
+import { Label } from "@/components/ui/Label";
 import { CldImage } from "next-cloudinary";
 import { useState } from "react";
 
@@ -15,7 +17,8 @@ export default function EditPage({
     const [transformation, setTransformation] = useState<
         undefined | "generative-fill" | "blur" | "grayscale" | "pixelate"
     >();
-
+    const [prePrompt, setPrePrompt] = useState("");
+    const [prompt, setPrompt] = useState("");
     return (
         <section>
             <div className="flex flex-col gap-8">
@@ -32,13 +35,23 @@ export default function EditPage({
                     >
                         Clear All
                     </Button>
-                    <Button
-                        onClick={() => {
-                            setTransformation("generative-fill");
-                        }}
-                    >
-                        Apply Generative Fill
-                    </Button>
+                    <div className="flex flex-col gap-3">
+                        <Button
+                            onClick={() => {
+                                setTransformation("generative-fill");
+                                setPrompt(prePrompt);
+                            }}
+                        >
+                            Apply Generative Fill
+                        </Button>
+                        <Label>Prompt:</Label>
+                        <Input
+                            value={prePrompt}
+                            onChange={(e) =>
+                                setPrePrompt(e.currentTarget.value)
+                            }
+                        />
+                    </div>
                     <Button
                         onClick={() => {
                             setTransformation("blur");
@@ -72,17 +85,20 @@ export default function EditPage({
                     {transformation === "generative-fill" && (
                         <CldImage
                             src={publicId}
-                            width="1200"
-                            height="1400"
+                            width="1800"
+                            height="1200"
                             alt="some image"
-                            fillBackground
+                            fillBackground={{
+                                prompt
+                            }}
                         />
                     )}
                     {transformation === "blur" && (
                         <CldImage
                             src={publicId}
-                            width="1200"
-                            height="1400"
+                            width="1800"
+                            height="1200"
+                            // @ts-ignore
                             blur="800"
                             alt="some image"
                         />
@@ -90,8 +106,9 @@ export default function EditPage({
                     {transformation === "grayscale" && (
                         <CldImage
                             src={publicId}
-                            width="1200"
-                            height="1400"
+                            width="1800"
+                            height="1200"
+                            // @ts-ignore
                             grayscale
                             alt="some image"
                         />
@@ -99,8 +116,9 @@ export default function EditPage({
                     {transformation === "pixelate" && (
                         <CldImage
                             src={publicId}
-                            width="1200"
-                            height="1400"
+                            width="1800"
+                            height="1200"
+                            // @ts-ignore
                             pixelate
                             alt="some image"
                         />

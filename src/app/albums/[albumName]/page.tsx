@@ -1,5 +1,6 @@
 import AlbumGrid from "@/app/albums/[albumName]/AlbumGrid";
 import { ForceRefresh } from "@/components/ForceRefesh";
+import { Button } from "@/components/ui/Button";
 import cloudinary from "cloudinary";
 
 export type SearchResult = {
@@ -24,6 +25,7 @@ export default async function AblumNamePage({
             <div className="flex flex-col gap-8">
                 <div className="flex justify-between">
                     <h1 className="text-4xl font-bold">{albumName} Album</h1>
+                    <Button variant="destructive">Delete Album</Button>
                 </div>
 
                 <AlbumGrid images={results.resources} />

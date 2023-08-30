@@ -33,14 +33,21 @@ export function ImageMenu({ image }: { image: SearchResult }) {
                         />
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                        <Link
-                            href={`/edit?publicId=${encodeURI(
-                                image.public_id
-                            )}`}
+                        <Button
+                            variant="ghost"
+                            className="flex justify-start"
+                            asChild
                         >
-                            <Pencil className="mr-2 w-4 h-4 ml-3" />
-                            Edit
-                        </Link>
+                            <Link
+                                className="cursor-pointer"
+                                href={`/edit?publicId=${encodeURI(
+                                    image.public_id
+                                )}`}
+                            >
+                                <Pencil className="mr-2 w-4 h-4 ml-3" />
+                                Edit
+                            </Link>
+                        </Button>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
